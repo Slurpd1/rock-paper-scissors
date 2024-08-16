@@ -1,3 +1,9 @@
+function main() {
+    computerChoice = getComputerChoice();
+    humanChoice = getHumanChoice();
+    evaluateGameOutcome(computerChoice, humanChoice);
+}
+
 function getComputerChoice() {
     // generate a random number between 0 and 2
     // use the randomly generated number to choose and return
@@ -25,4 +31,54 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-console.log(getComputerChoice())
+function getHumanChoice() {
+    let humanChoice;
+
+    humanChoice = prompt("Let's play rock paper scissors! Please input your choice (rock,paper,scissors):");
+
+    if (humanChoice.toLowerCase() === "rock" || humanChoice.toLowerCase() === "scissors" || humanChoice.toLowerCase() === "paper") {
+        evaluateGameOutcome(humanChoice,computerChoice);
+    }
+
+    else {
+        // invalid input
+    }
+}
+
+function evaluateGameOutcome(computerChoice, humanChoice) {
+    if (computerChoice === "rock") {
+        if (humanChoice === "rock") {
+            console.log("Tie game!");
+        }
+        else if (humanChoice === "paper") {
+            console.log("You win!!");
+        }
+        else if (humanChoice === "scissors") {
+            console.log("You lose, better luck next time!");
+        }
+    }
+
+    if (computerChoice === "paper") {
+        if (humanChoice === "rock") {
+            console.log("You lose, better luck next time!!");
+        }
+        else if (humanChoice === "paper") {
+            console.log("Tie game!");
+        }
+        else if (humanChoice === "scissors") {
+            console.log("You win!");
+        }
+    }
+
+    if (computerChoice === "scissors") {
+        if (humanChoice === "rock") {
+            console.log("You win!");
+        }
+        else if (humanChoice === "paper") {
+            console.log("You lose, better luck next time!!");
+        }
+        else if (humanChoice === "scissors") {
+            console.log("Tie game!");
+        }
+    }
+}

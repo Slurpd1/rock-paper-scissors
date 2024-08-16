@@ -1,9 +1,3 @@
-function main() {
-    computerChoice = getComputerChoice();
-    humanChoice = getHumanChoice();
-    evaluateGameOutcome(computerChoice, humanChoice);
-}
-
 function getComputerChoice() {
     // generate a random number between 0 and 2
     // use the randomly generated number to choose and return
@@ -31,13 +25,13 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-function getHumanChoice() {
+function getHumanChoice(computerChoice) {
     let humanChoice;
 
     humanChoice = prompt("Let's play rock paper scissors! Please input your choice (rock,paper,scissors):");
 
     if (humanChoice.toLowerCase() === "rock" || humanChoice.toLowerCase() === "scissors" || humanChoice.toLowerCase() === "paper") {
-        evaluateGameOutcome(humanChoice,computerChoice);
+        return humanChoice;
     }
 
     else {
@@ -82,3 +76,12 @@ function evaluateGameOutcome(computerChoice, humanChoice) {
         }
     }
 }
+
+
+function main() {
+    let computerChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
+    evaluateGameOutcome(computerChoice, humanChoice);
+}
+
+main()

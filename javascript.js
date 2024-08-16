@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore= 0;
+
 function getComputerChoice() {
     // generate a random number between 0 and 2
     // use the randomly generated number to choose and return

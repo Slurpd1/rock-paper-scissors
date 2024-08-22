@@ -38,3 +38,37 @@ function getComputerChoice() {
 
     return computerChoice;
 }
+
+
+function playRound(humanChoice, computerChoice) {
+    let totalScore = 0;
+    while (totalScore >= -5  && totalScore <= 5) {
+        // keep playing until either the human or computer accumulates a score of 5
+        if (humanChoice === computerChoice) {
+            continue;
+        }
+        else if (humanChoice === "rock") {
+            if (computerChoice === "paper") {
+                totalScore -= 1;
+                continue;
+            }
+            totalScore =+ 1;
+        
+        }
+        else if (humanChoice === "paper") {
+            if (computerChoice === "scissors") {
+                totalScore -= 1;
+                continue;
+            }
+            totalScore =+ 1;
+        
+        }
+        else if (humanChoice === "scissors") {
+            if (computerChoice === "rock") {
+                totalScore -= 1;
+                continue;
+            }
+            totalScore =+ 1;
+        }
+    }
+}

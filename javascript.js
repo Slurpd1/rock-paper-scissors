@@ -1,5 +1,16 @@
 let humanScore = 0;
-let computerScore= 0;
+let computerScore = 0;
+
+// selecting the 3 buttons
+const rockButton = document.querySelector(".rock");
+const paperButton = document.querySelector(".paper");
+const scissorsButton = document.querySelector(".scissors");
+
+rockButton.addEventListener("click", function() {
+    // so if the rock button is clicked, then we have a user choice, and we can generate a computer choice,
+    // then go straight to evaluating the game outcome.
+    let humanChoice = "rock"; 
+})
 
 function getComputerChoice() {
     // generate a random number between 0 and 2
@@ -27,64 +38,3 @@ function getComputerChoice() {
 
     return computerChoice;
 }
-
-function getHumanChoice(computerChoice) {
-    let humanChoice;
-
-    humanChoice = prompt("Let's play rock paper scissors! Please input your choice (rock,paper,scissors):");
-
-    if (humanChoice.toLowerCase() === "rock" || humanChoice.toLowerCase() === "scissors" || humanChoice.toLowerCase() === "paper") {
-        return humanChoice;
-    }
-
-    else {
-        // invalid input
-    }
-}
-
-function evaluateGameOutcome(computerChoice, humanChoice) {
-    if (computerChoice === "rock") {
-        if (humanChoice === "rock") {
-            console.log("Tie game!");
-        }
-        else if (humanChoice === "paper") {
-            console.log("You win!!");
-        }
-        else if (humanChoice === "scissors") {
-            console.log("You lose, better luck next time!");
-        }
-    }
-
-    if (computerChoice === "paper") {
-        if (humanChoice === "rock") {
-            console.log("You lose, better luck next time!!");
-        }
-        else if (humanChoice === "paper") {
-            console.log("Tie game!");
-        }
-        else if (humanChoice === "scissors") {
-            console.log("You win!");
-        }
-    }
-
-    if (computerChoice === "scissors") {
-        if (humanChoice === "rock") {
-            console.log("You win!");
-        }
-        else if (humanChoice === "paper") {
-            console.log("You lose, better luck next time!!");
-        }
-        else if (humanChoice === "scissors") {
-            console.log("Tie game!");
-        }
-    }
-}
-
-
-function main() {
-    let computerChoice = getComputerChoice();
-    let humanChoice = getHumanChoice();
-    evaluateGameOutcome(computerChoice, humanChoice);
-}
-
-main()
